@@ -31,6 +31,211 @@
     font-family: 黑体;
     border-right: 1px solid black;
 }
+.anniu{
+    cursor: pointer;
+}
+.popupContainer {
+    top: 10px;
+    width: 1020px;
+    height: 565px;
+    position: fixed;
+    margin: 20px auto;
+    left: 20%;
+    background: white;
+    display: none;
+    z-index: 999!important;
+    overflow-y:scroll;
+}
+.wrapBackground {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99!important;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.conditionItem {
+    display: flex;
+    display: -webkit-flex;
+    width: 994px;
+    border-bottom: 1px solid rgba(221, 221, 221, 1);
+    align-items: center;
+    padding: 13px 0 11px 0;
+}
+
+.conditionName {
+    width: 75px;
+    font-size: 14px;
+    font-family: PingFang-SC-Medium, PingFang-SC;
+    font-weight: 500;
+    color: rgba(102, 102, 102, 1);
+    line-height: 20px;
+    text-align: right;
+}
+
+.conditionDesc {
+    display: flex;
+    display: -webkit-flex;
+    width: 919px;
+}
+
+.countryList_a {
+    width: 807px;
+}
+
+.countryItem_a {
+    display: flex;
+    display: -webkit-flex;
+    line-height: 22px;
+}
+
+.keyItem_a {
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFangSC;
+    font-weight: 400;
+    color: rgba(102, 102, 102, 1);
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.countryItem_a:not(:last-child) {
+    padding-bottom: 6px;
+}
+
+.unSelected {
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFangSC;
+    font-weight: 400;
+    line-height: 20px;
+    padding-left: 54px;
+    padding-right: 30px;
+}
+
+.unSelected a {
+    color: rgba(208, 2, 27, 1);
+}
+
+.countryPositionIcon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url("../image/countryPosition.png") no-repeat;
+    background-size: 100%;
+    background-position: bottom;
+    margin-right: 5px;
+    min-width: 18px;
+    min-height: 18px;
+}
+
+.countryArea {
+    font-size: 14px;
+    font-family: PingFang-SC-Medium, PingFang-SC;
+    font-weight: 500;
+    color: rgba(66, 48, 106, 1);
+    line-height: 20px;
+    margin-right: 36px;
+    white-space: nowrap;
+}
+
+.countryNameList {
+    display: inline-block;
+    word-break: keep-all;
+}
+
+.countryName_con {
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFangSC;
+    font-weight: 400;
+    color: rgba(102, 102, 102, 1);
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.selectedCondition {
+    background: rgba(168, 160, 184, 1);
+    border-radius: 2px;
+    padding: 4px 6px;
+    color: #ffffff;
+
+}
+
+.btnContainer {
+    text-align: center;
+    position: relative;
+}
+
+.submitBtn {
+    background: rgba(66, 48, 106, 1);
+    border-radius: 0 4px 4px 0;
+    color: #ffffff;
+    text-align: center;
+    border-width: 0;
+    padding: 15px 45px;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 26px;
+}
+
+.moreConditionBtn {
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFangSC;
+    font-weight: 400;
+    color: rgba(102, 102, 102, 1);
+    line-height: 20px;
+    position: relative;
+    top: -1px;
+    padding: 7px 27px 7px 30px;
+}
+
+.moreConditionIcon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url("../image/downBlack.png") no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+}
+
+.resetBtn {
+    background: rgba(221, 221, 221, 1);
+    border-radius: 1px;
+    text-align: center;
+    font-size: 16px;
+    font-family: PingFangSC-Regular, PingFangSC;
+    font-weight: 400;
+    color: rgba(102, 102, 102, 1);
+    line-height: 22px;
+    border-width: 1px;
+    padding: 9px 11px 9px 8px;
+    position: absolute;
+    top: 13px;
+    right: 61px;
+}
+
+.deleteIcon {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    background: url("../image/deleteIcon.png") no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+    margin-right: 7px;
+}
+
+.moreCondition button {
+    outline: none;
+}
+
+.moreCondition a {
+    text-decoration: none;
+}
+
+.more_hide {
+    display: none;
+}
 .search_hader>div>a>input{
     width: 16px;
     height: 16px;
@@ -281,9 +486,12 @@ z-index: 1;
 }
 
 .containe_content_titile {
-    width: 100%;
+    width: 95%;
     height: 37px;
     font-size: 26px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     font-weight: 500;
     color: rgba(0, 0, 0, 1);
     line-height: 37px;
@@ -426,7 +634,6 @@ width: 100%;
 .images_shade {
     width: 100%;
     height: 45px;
-    background: rgba(0, 0, 0, 0.6);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -517,6 +724,10 @@ width: 100%;
     width:112px;
     height:54px;
 }
+.renzheng img{
+    width: 100%;
+    height: 100%;
+}
 .yirenzheng{
     display: flex;
     align-items: center;
@@ -574,13 +785,12 @@ width: 100%;
  */
 
 .load {
-
     align-items: center;
     justify-content: center;
     display: flex;
     width: 1200px;
     height: 68px;
-    background: rgba(221, 221, 221, 1);
+    background:red;
     border-radius: 4px;
     margin-top: 30px;
     margin-bottom: 10%;
@@ -967,7 +1177,7 @@ width: 100%;
 
 
 .lxfscroll {
-    width:600px;
+    width:585px;
     margin-left:auto;
     margin-right:auto;
     overflow: hidden;
